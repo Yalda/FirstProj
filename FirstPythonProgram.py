@@ -6,7 +6,7 @@ https://github.com/thehackerwithin/PyTrieste/wiki/ExerciseSession1-Basics
 import os
 import sys
 
-path="/afs/ictp.it/home/y/ykolahdo/ShellExample/thehackerwithin-PyTrieste-4f54727/shellExample/cleaneddata/alexander"
+path="/afs/ictp.it/home/y/ykolahdo/ShellExample/thehackerwithin-PyTrieste-4f54727/shellExample/cleaneddata/alexander/"
 
 ''' main '''
 def main():
@@ -18,28 +18,24 @@ def main():
   print "DONE"
 
 
-
 ''' MakeFileNameList() finds all of the filenames and puts them in a list '''
 def MakeFileNameList():
   dirList=os.listdir(path)
   return dirList
 
 
-
 ''' ChangeNtoM() replaces N with M '''
-def ChangeNtoM(filename)
+def ChangeNtoM(name):
 
-  pathToFile = path + filename  
-  fileToCheck = open("pathToFile","a") #open for append
+  pathToFile = path + name  
+  fileToCheck = open(pathToFile,"a") #open for append
   
-  for line in open("pathToFile"):
+  for line in fileToCheck:
       line = line.replace("Sex: N","Sex: M")
-      fileToCheck.write(line + "\n")
+      fileToCheck.write(line+"/n")
       fileToCheck.close()
 
-
-
-
+main()
 
 
 
