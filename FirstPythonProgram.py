@@ -13,10 +13,10 @@ def main():
 
   dirList = MakeFileNameList()
   for fileName in dirList:    
-    index = LineContainsResponseN(fileName)
-    if index:      	
-      ChangeNtoM(fileName,index)
- 
+    ChangeNtoM(fileName)
+
+  print "DONE"
+
 
 
 ''' MakeFileNameList() finds all of the filenames and puts them in a list '''
@@ -26,26 +26,24 @@ def MakeFileNameList():
 
 
 
+''' ChangeNtoM() replaces N with M '''
+def ChangeNtoM(filename)
 
-''' LineContainsResponseN() checks if a given line contains a question with an N response '''
-def LineContainsResponseN(filename)
+  pathToFile = path + filename  
+  fileToCheck = open("pathToFile","a") #open for append
   
-  fileToCheck = path + filename
-  infile = open(fileToCheck,"r")
-  contents = infile.read()
-  infile.close()
-
-  searchTerm = "Sex: N"
-  index = contents.find(searchTerm)
-  
-  return index
+  for line in open("pathToFile"):
+      line = line.replace("Sex: N","Sex: M")
+      fileToCheck.write(line + "\n")
+      fileToCheck.close()
 
 
-def ChangeNtoM(a_line)
-  
-  if LineContainsResponseN(a_line)
-  ''' Change N in the line to M'''
-  return True
+
+
+
+
+
+
 
 
 
